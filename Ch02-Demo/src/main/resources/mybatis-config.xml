@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}"/>
+                <property name="url" value="${db.url}"/>
+                <property name="username" value="${db.username}"/>
+                <property name="password" value="${db.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--<mapper resource="cn/webrx/mapper/DbMapper.xml"/>-->
+
+        <!-- mybatis 核心配置文件，会自动加载mapper下的所有接口及和接口同名的xml配置 -->
+        <package name="cn.webrx.mapper"/>
+
+        <!--<mapper class="cn.webrx.mapper.DbMapper"/>-->
+        <!--<mapper resource="cn/webrx/mapper/DbMapper.xml"/>-->
+    </mappers>
+</configuration>
