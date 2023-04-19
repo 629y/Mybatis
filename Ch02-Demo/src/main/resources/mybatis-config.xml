@@ -17,12 +17,12 @@
         </environment>
     </environments>
     <mappers>
-        <!--<mapper resource="cn/webrx/mapper/DbMapper.xml"/>-->
+        <!--<mapper resource="cn/zxy/mapper/DbMapper.xml"/>-->
 
         <!-- mybatis 核心配置文件，会自动加载mapper下的所有接口及和接口同名的xml配置 -->
-        <package name="cn.webrx.mapper"/>
+        <package name="cn.zxy.mapper"/>
 
-        <!--<mapper class="cn.webrx.mapper.DbMapper"/>-->
-        <!--<mapper resource="cn/webrx/mapper/DbMapper.xml"/>-->
+        <!--<mapper class="cn.zxy.mapper.DbMapper"/>-->
+        <!--<mapper resource="cn/zxy/mapper/DbMapper.xml"/>-->
     </mappers>
 </configuration>

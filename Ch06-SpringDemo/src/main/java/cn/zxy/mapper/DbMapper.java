@@ -4,23 +4,24 @@
  */
 package cn.zxy.mapper;
 
-import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * <p>Description:</p>
  *
- * <p>Powered by zxy On 2023/4/18 21:09 </p>
+ * <p>Powered by zxy On 2023/4/19 9:36 </p>
  *
  * @author zxy [zxy06291@163.com]
  * @version 1.0
  * @since 17
  */
-
+@Repository
 public interface DbMapper {
     public List<String> dbs();
 
-    @Select("select version()")
-    public String version();
+    public List<String> tbs(String db);
+
+    public List<String> tbs();
 }

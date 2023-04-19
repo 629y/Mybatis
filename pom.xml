@@ -13,6 +13,8 @@
         <module>Ch02-Demo</module>
         <module>Ch03-Book</module>
         <module>Ch04-Log</module>
+        <module>Ch06-SpringDemo</module>
+        <module>Ch08-crud</module>
     </modules>
 
     <properties>
@@ -58,6 +60,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.xml</include>
+                    <include>**/*.properties</include>
                 </includes>
             </resource>
         </resources>
