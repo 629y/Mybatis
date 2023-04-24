@@ -1059,101 +1059,162 @@ public class Demo {
 
 ### 3.5 批量加载mappers xml
 
-在项目上`resources/mapper/mapper/Xxx.xml`
+`Ch05-Log4j2Demo`
 
+在项目上`pom.xml`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.zxy</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>Ch05-Log4j2Demo</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+
+    </dependencies>
+</project>
 ```
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "https://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-    <properties resource="db.properties"/>
 
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${db.driver}"/>
-                <property name="url" value="${db.url}"/>
-                <property name="username" value="${db.username}"/>
-                <property name="password" value="${db.password}"/>
-            </dataSource>
-        </environment>
-    </environments>
-    <mappers>
-        <package name="cn.webrx.mapper"/>
-        <!--<mapper class="cn.webrx.mapper.DbMapper"/>-->
-        <!--<mapper resource="mapper/DbMapper.xml"/>-->
+`src/main/resources/log4j2.xml`
 
-        <!--<mapper class="cn.webrx.mapper.BookMapper"/>-->
-        <!--<mapper resource="mapper/BookMapper.xml"/>-->
-    </mappers>
-</configuration>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss}[rowno:%L] [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="LogToFile" fileName="log/test.log">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="orgb" level="error">
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+        <Logger name="orga" level="debug" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+
+        <Logger name="cn" level="error">
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+
+        <Logger name="cn.zxy.Demo" level="error" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+
+        <Logger name="cn.zxy.MyDemo" level="error">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+
+        <!--全局的默认日志级别-->
+        <Root level="debug">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>
 ```
 
 演示程序
 
-```
+`src/main/java/cn/zxy/Demo.java`
+
+```java
 /*
- * Copyright (c) 2006, 2023, webrx.cn All rights reserved.
+ * Copyright (c) 2017, 2023, zxy.cn All rights reserved.
  *
  */
-package cn;
+package cn.zxy;
 
-import cn.webrx.mapper.BookMapper;
-import cn.webrx.mapper.DbMapper;
-import org.apache.ibatis.builder.xml.XMLMapperBuilder;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import java.io.File;
-import java.io.InputStream;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
- * <p></p>
- * <p>Powered by webrx On 2023-04-18 15:11:15</p>
+ * <p>Description:</p>
+ * <p>Class:</p>
+ * <p>Powered by zxy On 2023/4/24 21:58 </p>
  *
- * @author webrx [webrx@126.com]
+ * @author zxy [zxy06291@163.com]
  * @version 1.0
  * @since 17
  */
-
 public class Demo {
+    public final static Logger log = LogManager.getLogger();
     public static void main(String[] args) {
-        //logback log4j2
-        try (var is = Resources.getResourceAsStream("mybatis-config.xml")) {
-            var sf = new SqlSessionFactoryBuilder().build(is);
+        log.info("信息");
+        log.debug("debug调试");
+    }
+}
+```
 
-           
-            //-----------------------------批量扫描src/main/resources/mapper/*.xml文件
-			Configuration cfg = sf.getConfiguration();
-            String xml = "mapper/";
-            String p = Thread.currentThread().getContextClassLoader().getResource(xml).getPath();
-            File f = new File(p);
-            for (String s : f.list()) {
-                var t = xml + s;
-                InputStream is2 = Thread.currentThread().getContextClassLoader().getResourceAsStream(t);
-                new XMLMapperBuilder(is2, cfg, t, cfg.getSqlFragments()).parse();
-            }
-            //-----------------------------
+`src/test/java/cn/zxy/MyDemo.java`
 
-            var ss = sf.openSession();
-            BookMapper bm = ss.getMapper(BookMapper.class);
+```java
+/*
+ * Copyright (c) 2017, 2023, zxy.cn All rights reserved.
+ *
+ */
+package cn.zxy;
 
-            System.out.println(bm.queryBook());
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-            DbMapper dm = ss.getMapper(DbMapper.class);
-            System.out.println(dm.version());
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
+/**
+ * <p>Description:</p>
+ * <p>Class:</p>
+ * <p>Powered by zxy On 2023/4/25 1:22 </p>
+ *
+ * @author zxy [zxy06291@163.com]
+ * @version 1.0
+ * @since 17
+ */
+public class MyDemo {
+    public static Logger log = LogManager.getLogger();
+    public static void main(String[] args) {
+        log.log(Level.ERROR,"no");
+        log.debug("dddebug");
+        for (int i = 1; i <= 10; i++) {
+            log.log(Level.ERROR,"hello {[%03d]}",i);
         }
     }
 }
 ```
+
+![image-20230425013838808](D:\新建文件夹\java\ssms-mybatis\mybatis\README\image-20230425013838808.png)
 
 ### 3.6 spring demo整合
 

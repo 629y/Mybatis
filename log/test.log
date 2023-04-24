@@ -71,3 +71,14 @@
 21:41:55.592 [main] DEBUG cn.zxy.mapper.BookMapper.queryBook - ==>  Preparing: select name from t_book where name like '%java%'
 21:41:55.593 [main] DEBUG cn.zxy.mapper.BookMapper.queryBook - ==> Parameters: 
 21:41:55.598 [main] DEBUG cn.zxy.mapper.BookMapper.queryBook - <==      Total: 1
+01:36:53 [main] ERROR cn.zxy.MyDemo - no
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}
+01:36:53 [main] ERROR cn.zxy.MyDemo - hello {[%03d]}

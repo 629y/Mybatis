@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss}[rowno:%L] [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="LogToFile" fileName="log/test.log">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="orgb" level="error">
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+        <Logger name="orga" level="debug" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+
+        <Logger name="cn" level="error">
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+
+        <Logger name="cn.zxy.Demo" level="error" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+
+        <Logger name="cn.zxy.MyDemo" level="error">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+
+        <!--全局的默认日志级别-->
+        <Root level="debug">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>
