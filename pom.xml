@@ -15,6 +15,7 @@
         <module>Ch04-Log</module>
         <module>Ch06-SpringDemo</module>
         <module>Ch08-crud</module>
+        <module>Ch05-Log4j2Demo</module>
     </modules>
 
     <properties>

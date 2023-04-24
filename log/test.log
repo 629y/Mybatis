@@ -1,0 +1,73 @@
+20:27:32.556 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==>  Preparing: show databases
+20:27:32.644 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==> Parameters: 
+20:27:32.764 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - <==      Total: 5
+20:27:32.810 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==>  Preparing: show tables from db
+20:27:32.813 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==> Parameters: 
+20:27:32.817 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - <==      Total: 1
+20:27:32.820 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select * from t_st
+20:27:32.821 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+20:27:32.825 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 0
+20:27:32.842 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==>  Preparing: insert into t_book set name = ?,price=?,author=?,pdate=?
+20:27:32.845 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==> Parameters: 《mybatis入门教程》(String), 25.0(Double), jack(String), 2023-04-24(LocalDate)
+20:33:29.301 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==>  Preparing: show databases
+20:33:29.392 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==> Parameters: 
+20:33:29.507 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - <==      Total: 5
+20:33:29.558 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==>  Preparing: show tables from db
+20:33:29.559 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==> Parameters: 
+20:33:29.563 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - <==      Total: 2
+20:33:29.566 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select * from t_st
+20:33:29.567 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+20:33:29.570 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 0
+20:33:29.578 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==>  Preparing: insert into t_book set name = ?,price=?,author=?,pdate=?
+20:33:29.582 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==> Parameters: 《mybatis入门教程》(String), 25.0(Double), jack(String), 2023-04-24(LocalDate)
+20:36:10.803 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==>  Preparing: show databases
+20:36:10.911 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==> Parameters: 
+20:36:11.035 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - <==      Total: 5
+20:36:11.079 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==>  Preparing: show tables from db
+20:36:11.080 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==> Parameters: 
+20:36:11.084 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - <==      Total: 2
+20:36:11.087 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select * from t_st
+20:36:11.088 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+20:36:11.091 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 0
+20:36:11.100 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==>  Preparing: insert into t_book set name = ?,price=?,author=?,pdate=?
+20:36:11.103 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==> Parameters: 《mybatis入门教程》(String), 25.0(Double), jack(String), 2023-04-24(LocalDate)
+20:40:41.112 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==>  Preparing: show databases
+20:40:41.199 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==> Parameters: 
+20:40:41.328 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - <==      Total: 5
+20:40:41.378 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==>  Preparing: show tables from db
+20:40:41.379 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==> Parameters: 
+20:40:41.385 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - <==      Total: 2
+20:40:41.389 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select * from t_st
+20:40:41.389 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+20:40:41.392 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 0
+20:40:41.401 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==>  Preparing: insert into t_book set name = ?,price=?,author=?,pdate=?
+20:40:41.408 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==> Parameters: 《mybatis入门教程》(String), 25.0(Double), jack(String), 2023-04-24(LocalDate)
+20:42:15.237 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==>  Preparing: show databases
+20:42:15.324 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==> Parameters: 
+20:42:15.436 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - <==      Total: 5
+20:42:15.486 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==>  Preparing: show tables from db
+20:42:15.487 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==> Parameters: 
+20:42:15.491 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - <==      Total: 2
+20:42:15.494 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select * from t_st
+20:42:15.494 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+20:42:15.498 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 0
+20:42:15.507 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==>  Preparing: insert into t_book set name = ?,price=?,author=?,pdate=?
+20:42:15.510 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==> Parameters: 《mybatis入门教程》(String), 25.0(Double), jack(String), 2023-04-24(LocalDate)
+20:47:17.141 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==>  Preparing: show databases
+20:47:17.284 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - ==> Parameters: 
+20:47:17.487 [main] DEBUG cn.zxy.mapper.DbMapper.dbs - <==      Total: 5
+20:47:17.556 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==>  Preparing: show tables from db
+20:47:17.558 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - ==> Parameters: 
+20:47:17.568 [main] DEBUG cn.zxy.mapper.DbMapper.tbs - <==      Total: 2
+20:47:17.574 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select * from t_st
+20:47:17.579 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+20:47:17.588 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 0
+20:47:17.616 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==>  Preparing: insert into t_book set id=?, name = ?,price=?,author=?,pdate=?
+20:47:17.632 [main] DEBUG cn.zxy.mapper.BookMapper.add - ==> Parameters: 2(Integer), 《mybatis入门教程》(String), 25.0(Double), jack(String), 2023-04-24(LocalDate)
+20:47:17.669 [main] DEBUG cn.zxy.mapper.BookMapper.add - <==    Updates: 1
+21:41:55.369 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==>  Preparing: select name,price from t_book
+21:41:55.461 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - ==> Parameters: 
+21:41:55.581 [main] DEBUG cn.zxy.mapper.BookMapper.queryAll - <==      Total: 2
+21:41:55.592 [main] DEBUG cn.zxy.mapper.BookMapper.queryBook - ==>  Preparing: select name from t_book where name like '%java%'
+21:41:55.593 [main] DEBUG cn.zxy.mapper.BookMapper.queryBook - ==> Parameters: 
+21:41:55.598 [main] DEBUG cn.zxy.mapper.BookMapper.queryBook - <==      Total: 1

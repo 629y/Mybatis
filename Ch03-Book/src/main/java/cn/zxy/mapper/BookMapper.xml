@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zxy.mapper.BookMapper">
+    <insert id="add">
+        insert into t_book set id=#{id}, name = #{name},price=#{price},author=#{author},pdate=#{pdate}
+    </insert>
+    <select id="count" resultType="int">
+        select count(*) from t_book
+    </select>
+
+    <!--<select id="dbs" resultType="string">show databases</select>-->
+</mapper>
